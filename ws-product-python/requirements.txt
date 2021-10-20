@@ -1,0 +1,9 @@
+click==8.0.1
+flask==2.0.2
+greenlet==1.1.2
+itsdangerous==2.0.1
+jinja2==3.0.2
+markupsafe==2.0.1
+psycopg2-binary==2.9.1
+sqlalchemy==1.4.25
+werkzeug==2.0.2
