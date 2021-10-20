@@ -18,15 +18,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: docker build
-        run: |
-          docker build ./ws-product-python -t api-python:1.0.0
       - name: Login to DockerHub
         env:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           docker login -u $username -p $password
+      - name: docker build
+        run: |
+          docker build ./ws-product-python -t api-python:1.0.0
       - name: push
         run: |
           docker push api-python:1.0.0
