@@ -26,7 +26,7 @@ jobs:
           docker login -u $username -p $password
       - name: docker build
         run: |
-          docker build ./ws-product-python -t api-python:1.0.0
+          docker build ./ws-product-python -t iverse/api-python:1.0.0
       - name: push
         run: |
-          docker push api-python:1.0.0
+          docker push iverse/api-python:1.0.0
