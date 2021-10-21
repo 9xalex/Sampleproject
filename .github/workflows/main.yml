@@ -30,3 +30,9 @@ jobs:
       - name: push
         run: |
           docker push iverse/api-python:1.0.0
+      - name: docker compose to k8s
+        run: |
+          curl -L https://github.com/kubernetes/kompose/releases/download/v1.24.0/kompose-linux-amd64 -o kompose
+          chmod +x kompose
+          sudo mv ./kompose /usr/local/bin/kompose
+          kompose convert -f docker-compose.yaml
