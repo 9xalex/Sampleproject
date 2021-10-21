@@ -35,4 +35,5 @@ jobs:
           curl -L https://github.com/kubernetes/kompose/releases/download/v1.24.0/kompose-linux-amd64 -o kompose
           chmod +x kompose
           sudo mv ./kompose /usr/local/bin/kompose
+          ls
           kompose convert -f ./docker-compose.yaml
