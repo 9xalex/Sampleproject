@@ -52,7 +52,7 @@ jobs:
           cd terraform
           go install
           echo $PATH
-          terrafrom -help
-          terrafrom -version
-          terrafrom init 
-          terrafrom apply
+          terraform -help
+          terraform -version
+          terraform init 
+          terraform apply
