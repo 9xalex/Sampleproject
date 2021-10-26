@@ -26,6 +26,7 @@ jobs:
           docker login -u $username -p $password
       - name: docker build
         run: |
+          pwd
           docker build ./ws-product-python -t iverse/api-python:1.0.0
       - name: push
         run: |
@@ -55,4 +56,4 @@ jobs:
           terraform -help
           terraform -version
           terraform init 
-          terraform apply ./helm.tf
+          terraform apply -target=./helm.tf
