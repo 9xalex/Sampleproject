@@ -52,7 +52,6 @@ jobs:
           cd terraform
           go install
           echo $PATH
-          mv ./terraform /usr/local/bin/
           terraform -help
           terrafrom -version
           terrafrom init 
