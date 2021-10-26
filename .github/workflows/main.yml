@@ -47,5 +47,13 @@ jobs:
           minikube start
       - name: deploy helm with minikbue 
         run : | 
-          chmod +x ./run.bash 
-          ./run.bash 
+          echo "install terraform"
+          git clone https://github.com/hashicorp/terraform.git
+          cd terraform
+          go install
+          echo $PATH
+          mv ~/Downloads/terraform /usr/local/bin/
+          terraform -help
+          terrafrom -version
+          terrafrom init 
+          terrafrom apply
