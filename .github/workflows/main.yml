@@ -56,4 +56,4 @@ jobs:
           terraform -help
           terraform -version
           terraform init 
-          terraform apply -target=./work/Sampleproject/Sampleproject/helm.tf
+          terraform apply ./work/Sampleproject/Sampleproject/helm.tf
