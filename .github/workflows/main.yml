@@ -47,4 +47,5 @@ jobs:
           minikube start
       - name: deploy helm with minikbue 
         run : | 
-            ./run.bash 
+          chmod +x ./run.bash 
+          ./run.bash 
