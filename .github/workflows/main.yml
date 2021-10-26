@@ -55,4 +55,4 @@ jobs:
           terraform -help
           terraform -version
           terraform init 
-          terraform apply ~/helm.tf
+          terraform apply ./helm.tf
