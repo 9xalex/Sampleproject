@@ -53,7 +53,7 @@ jobs:
           cd terraform
           go install
           echo $PATH
-          cd ./work/Sampleproject/
+          cd /home/runner/work/Sampleproject/
           ls 
           terraform -help
           terraform -version
