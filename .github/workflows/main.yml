@@ -58,4 +58,4 @@ jobs:
           terraform -help
           terraform -version
           terraform init 
-          terraform apply /home/runner/work/Sampleproject/Sampleproject/helm.tf
+          terraform apply 
