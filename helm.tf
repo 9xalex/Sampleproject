@@ -3,11 +3,11 @@ provider "helm" {
    config_context = "minikube"
  }
 }
-resource "helm_release" "mysql" {
- name  = "mysql"
+resource "helm_release" "postgresql" {
+ name  = "postgresql"
  chart = "${abspath(path.root)}/helm/postgresql"
 }
-resource "helm_release" "wordpress" {
- name  = "wordpress"
+resource "helm_release" "python" {
+ name  = "python"
  chart = "${abspath(path.root)}/helm/python"
 }

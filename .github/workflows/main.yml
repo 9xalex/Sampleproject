@@ -26,6 +26,7 @@ jobs:
           docker login -u $username -p $password
       - name: docker build
         run: |
+          pwd
           docker build ./ws-product-python -t iverse/api-python:1.0.0
       - name: push
         run: |
@@ -37,3 +38,24 @@ jobs:
           sudo mv ./kompose /usr/local/bin/kompose
           ls
           kompose convert -f ./docker-compose.yaml
+      - name: install minkikue and kubectl 
+        run: |
+          curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+          sudo install minikube-linux-amd64 /usr/local/bin/minikube
+          curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+          chmod +x ./kubectl
+          sudo mv ./kubectl /usr/local/bin/kubectl
+          minikube start
+      - name: deploy helm with minikbue 
+        run : | 
+          echo "install terraform"
+          git clone https://github.com/hashicorp/terraform.git
+          cd terraform
+          go install
+          echo $PATH
+          cd /home/runner/work/Sampleproject/Sampleproject
+          ls 
+          terraform -help
+          terraform -version
+          terraform init 
+          terraform apply -auto-approve
