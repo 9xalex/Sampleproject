@@ -33,6 +33,7 @@ jobs:
       - name: docker build
         run: |
           pwd
+          
           docker build -f ./mysqlDockerfile -t iverse/postgres:${{ steps.branch_name.outputs.SOURCE_NAME }}.${{ steps.branch_name.outputs.SOURCE_TAG }}.${{ steps.branch_name.outputs.SOURCE_BRANCH }}
       - name: docker build
         run: |
