@@ -39,7 +39,7 @@ jobs:
           echo $SOURCE_NAME
           echo $SOURCE_BRANCH
           echo $SOURCE_TAG
-          docker build -f ./mysqlDockerfile -t iverse/postgres:${GITHUB_REF/refs\/tags\//}
+          docker build -f ./mysqlDockerfile -t iverse/postgres:1.0.0
       - name: push
         run: |
           docker push iverse/postgres:${GITHUB_REF/refs\/tags\//}
